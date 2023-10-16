@@ -48,6 +48,7 @@ class candlepin::artemis {
     selboolean { 'candlepin_can_bind_activemq_port':
       value      => 'on',
       persistent => true,
+      before => Service['tomcat'],
     }
   }
 }
